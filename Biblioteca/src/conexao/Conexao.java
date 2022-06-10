@@ -101,4 +101,38 @@ public class Conexao {
             JOptionPane.showMessageDialog(null, "ERRO", "ERRO:C081", JOptionPane.ERROR_MESSAGE);
         }
     }
+    public void DeleteLivro(String isbn13){
+        int Isbn13 = Integer.parseInt(isbn13);
+        
+        String InstrucaoSQL = "DELETE FROM livros WHERE livros.isbn13 = "+Isbn13;
+        
+        try{
+            conexao = DriverManager.getConnection(url,username,password);
+            st = conexao.createStatement();
+            st.executeUpdate(InstrucaoSQL);
+            st.close();
+            conexao.close();
+            JOptionPane.showMessageDialog(null, "Concluido...", "Livro deletado !!!", JOptionPane.DEFAULT_OPTION);
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, "ERRO", "ERRO:C104", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    public void DeleteAluno(String matricula){
+        int Matricula = Integer.parseInt(matricula);
+        
+        String InstrucaoSQL = "DELETE FROM alunos WHERE alunos.matricula = "+Matricula;
+        
+        try{
+            conexao = DriverManager.getConnection(url,username,password);
+            st = conexao.createStatement();
+            st.executeUpdate(InstrucaoSQL);
+            st.close();
+            conexao.close();
+            JOptionPane.showMessageDialog(null, "Concluido...", "Aluno deletado !!!", JOptionPane.DEFAULT_OPTION);
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, "ERRO", "ERRO:C121", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }
