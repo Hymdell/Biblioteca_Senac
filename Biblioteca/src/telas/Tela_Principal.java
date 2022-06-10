@@ -1,17 +1,23 @@
 package telas;
 
 import java.awt.Toolkit;
+import javax.swing.SwingConstants;
 
 public class Tela_Principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Tela_Principal
-     */
+    private static Livros_Acoes LA = new Livros_Acoes();
+    private static Aluno_Acoes AA = new Aluno_Acoes();
+    private static Menu_Ajuda MA = new Menu_Ajuda();
+    
     public Tela_Principal() {
         initComponents();
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagens/estante_icon.png")));
         setExtendedState(Tela_Principal.MAXIMIZED_BOTH);
+        
+        button_alunos.setVerticalTextPosition(SwingConstants.BOTTOM);
+        button_alunos.setHorizontalTextPosition(SwingConstants.CENTER);
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -22,58 +28,121 @@ public class Tela_Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        desktop_principal = new javax.swing.JDesktopPane();
+        button_livros = new javax.swing.JButton();
+        button_livros.setVerticalTextPosition(SwingConstants.BOTTOM);
+        button_livros.setHorizontalTextPosition(SwingConstants.CENTER);
+        button_alunos = new javax.swing.JButton();
+        button_alunos.setVerticalTextPosition(SwingConstants.BOTTOM);
+        button_alunos.setHorizontalTextPosition(SwingConstants.CENTER);
+        button_ajuda = new javax.swing.JButton();
+        button_ajuda.setVerticalTextPosition(SwingConstants.BOTTOM);
+        button_ajuda.setHorizontalTextPosition(SwingConstants.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Biblioteca");
         setMaximumSize(new java.awt.Dimension(1920, 1080));
 
-        jButton1.setBackground(new java.awt.Color(23, 71, 96));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/book_icon.png"))); // NOI18N
+        button_livros.setBackground(new java.awt.Color(23, 71, 96));
+        button_livros.setForeground(new java.awt.Color(255, 255, 255));
+        button_livros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/book_icon.png"))); // NOI18N
+        button_livros.setText("Livros");
+        button_livros.setToolTipText("Ações referentes a livros");
+        button_livros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button_livros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_livrosMouseClicked(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(23, 71, 96));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/alunos.png"))); // NOI18N
+        button_alunos.setBackground(new java.awt.Color(23, 71, 96));
+        button_alunos.setForeground(new java.awt.Color(255, 255, 255));
+        button_alunos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/alunos.png"))); // NOI18N
+        button_alunos.setText("Alunos");
+        button_alunos.setToolTipText("Ações referentes aos alunos");
+        button_alunos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button_alunos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_alunosMouseClicked(evt);
+            }
+        });
 
-        jDesktopPane1.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        button_ajuda.setBackground(new java.awt.Color(23, 71, 96));
+        button_ajuda.setForeground(new java.awt.Color(255, 255, 255));
+        button_ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ajuda_icon.png"))); // NOI18N
+        button_ajuda.setText("Ajuda");
+        button_ajuda.setToolTipText("Menu de ajuda ao usuário");
+        button_ajuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button_ajuda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_ajudaMouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+        desktop_principal.setLayer(button_livros, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        desktop_principal.setLayer(button_alunos, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        desktop_principal.setLayer(button_ajuda, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout desktop_principalLayout = new javax.swing.GroupLayout(desktop_principal);
+        desktop_principal.setLayout(desktop_principalLayout);
+        desktop_principalLayout.setHorizontalGroup(
+            desktop_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(desktop_principalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(340, Short.MAX_VALUE))
+                .addGroup(desktop_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(button_alunos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(button_livros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(button_ajuda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(275, Short.MAX_VALUE))
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+        desktop_principalLayout.setVerticalGroup(
+            desktop_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(desktop_principalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(button_livros)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addComponent(button_alunos)
+                .addGap(18, 18, 18)
+                .addComponent(button_ajuda)
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(desktop_principal)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(desktop_principal)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button_livrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_livrosMouseClicked
+        if(!LA.isVisible()){
+        desktop_principal.add(LA);
+        LA.setVisible(true);
+        }
+        
+    }//GEN-LAST:event_button_livrosMouseClicked
+
+    private void button_alunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_alunosMouseClicked
+        if(!AA.isVisible()){
+        desktop_principal.add(AA);
+        AA.setVisible(true);
+        }
+    }//GEN-LAST:event_button_alunosMouseClicked
+
+    private void button_ajudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_ajudaMouseClicked
+        if(!MA.isVisible()){
+        desktop_principal.add(MA);
+        MA.setVisible(true);
+        }
+    }//GEN-LAST:event_button_ajudaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -111,8 +180,9 @@ public class Tela_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JButton button_ajuda;
+    private javax.swing.JButton button_alunos;
+    private javax.swing.JButton button_livros;
+    private javax.swing.JDesktopPane desktop_principal;
     // End of variables declaration//GEN-END:variables
 }
