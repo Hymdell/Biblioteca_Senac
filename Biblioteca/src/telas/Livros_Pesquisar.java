@@ -8,12 +8,12 @@ package telas;
  *
  * @author xboxc
  */
-public class Livro_Adicionar extends javax.swing.JInternalFrame {
+public class Livros_Pesquisar extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form Registrar_Livro
+     * Creates new form Ver_Livros_Registrados
      */
-    public Livro_Adicionar() {
+    public Livros_Pesquisar() {
         initComponents();
     }
 

@@ -8,12 +8,12 @@ package telas;
  *
  * @author xboxc
  */
-public class Livro_Deletar extends javax.swing.JInternalFrame {
+public class Livros_Acoes extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Deletar_Livro
      */
-    public Livro_Deletar() {
+    public Livros_Acoes() {
         initComponents();
     }
 
