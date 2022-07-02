@@ -27,22 +27,140 @@ public class Aluno_Acoes extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        label_matricula = new javax.swing.JLabel();
+        text_matricula = new javax.swing.JTextField();
+        label_nome = new javax.swing.JLabel();
+        text_nome = new javax.swing.JTextField();
+        label_curso = new javax.swing.JLabel();
+        text_curso = new javax.swing.JTextField();
+        button_buscar = new javax.swing.JButton();
+        label_informe = new javax.swing.JLabel();
+        text_telefone = new javax.swing.JTextField();
+        label_telefone = new javax.swing.JLabel();
+        label_email = new javax.swing.JLabel();
+        text_email = new javax.swing.JTextField();
+        button_adicionar = new javax.swing.JButton();
+        button_editar = new javax.swing.JButton();
+        button_excluir = new javax.swing.JButton();
 
         setClosable(true);
-        setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
+        setTitle("Alunos");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/alunos2.png"))); // NOI18N
+
+        label_matricula.setText("Matrícula:");
+
+        label_nome.setText("Nome:");
+
+        label_curso.setText("Curso:");
+
+        button_buscar.setText("Buscar Aluno");
+        button_buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_buscarMouseClicked(evt);
+            }
+        });
+
+        label_informe.setText("Informe o Telefone ou Email");
+
+        label_telefone.setText("Telefone:");
+
+        label_email.setText("Email:");
+
+        button_adicionar.setText("Adicionar");
+        button_adicionar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_adicionarMouseClicked(evt);
+            }
+        });
+
+        button_editar.setText("Editar");
+        button_editar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_editarMouseClicked(evt);
+            }
+        });
+
+        button_excluir.setText("Excluir");
+        button_excluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_excluirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_informe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(label_matricula)
+                                .addComponent(label_nome)
+                                .addComponent(label_curso))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(text_curso, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(text_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(text_matricula, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                                    .addComponent(button_buscar))))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(button_adicionar)
+                            .addGap(18, 18, 18)
+                            .addComponent(button_editar)
+                            .addGap(18, 18, 18)
+                            .addComponent(button_excluir))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(label_telefone)
+                                .addComponent(label_email))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(text_email, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                .addComponent(text_telefone)))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_matricula)
+                    .addComponent(text_matricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_buscar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_nome)
+                    .addComponent(text_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_curso)
+                    .addComponent(text_curso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addComponent(label_informe)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_telefone)
+                    .addComponent(text_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_email)
+                    .addComponent(text_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(button_adicionar)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(button_excluir)
+                        .addComponent(button_editar)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -56,11 +174,42 @@ public class Aluno_Acoes extends javax.swing.JInternalFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setBounds(800, 400, 406, 310);
+        setBounds(800, 400, 353, 290);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button_buscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_buscarMouseClicked
+        
+    }//GEN-LAST:event_button_buscarMouseClicked
+
+    private void button_adicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_adicionarMouseClicked
+        
+    }//GEN-LAST:event_button_adicionarMouseClicked
+
+    private void button_editarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_editarMouseClicked
+        
+    }//GEN-LAST:event_button_editarMouseClicked
+
+    private void button_excluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_excluirMouseClicked
+        
+    }//GEN-LAST:event_button_excluirMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton button_adicionar;
+    private javax.swing.JButton button_buscar;
+    private javax.swing.JButton button_editar;
+    private javax.swing.JButton button_excluir;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel label_curso;
+    private javax.swing.JLabel label_email;
+    private javax.swing.JLabel label_informe;
+    private javax.swing.JLabel label_matricula;
+    private javax.swing.JLabel label_nome;
+    private javax.swing.JLabel label_telefone;
+    private javax.swing.JTextField text_curso;
+    private javax.swing.JTextField text_email;
+    private javax.swing.JTextField text_matricula;
+    private javax.swing.JTextField text_nome;
+    private javax.swing.JTextField text_telefone;
     // End of variables declaration//GEN-END:variables
 }

@@ -27,22 +27,137 @@ public class Livros_Acoes extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        label_isbn13 = new javax.swing.JLabel();
+        text_isbn13 = new javax.swing.JTextField();
+        label_titulo = new javax.swing.JLabel();
+        text_titulo = new javax.swing.JTextField();
+        label_autor = new javax.swing.JLabel();
+        label_editora = new javax.swing.JLabel();
+        label_lancamento = new javax.swing.JLabel();
+        text_autor = new javax.swing.JTextField();
+        text_editora = new javax.swing.JTextField();
+        text_lancamento = new javax.swing.JTextField();
+        label_disponivel = new javax.swing.JLabel();
+        text_disponivel = new javax.swing.JTextField();
+        button_buscar = new javax.swing.JButton();
+        button_adicionar = new javax.swing.JButton();
+        button_editar = new javax.swing.JButton();
+        button_excluir = new javax.swing.JButton();
 
         setClosable(true);
-        setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
+        setTitle("Livros");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/book_icon2.png"))); // NOI18N
+
+        label_isbn13.setText("ISBN13:");
+
+        label_titulo.setText("Titulo:");
+
+        label_autor.setText("Autor:");
+
+        label_editora.setText("Editora:");
+
+        label_lancamento.setText("Lançamento:");
+
+        label_disponivel.setText("Disponivel:");
+
+        button_buscar.setText("Buscar Livro");
+        button_buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_buscarMouseClicked(evt);
+            }
+        });
+
+        button_adicionar.setText("Adicionar");
+        button_adicionar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_adicionarMouseClicked(evt);
+            }
+        });
+
+        button_editar.setText("Editar");
+        button_editar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_editarMouseClicked(evt);
+            }
+        });
+
+        button_excluir.setText("Excluir");
+        button_excluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_excluirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_editora)
+                            .addComponent(label_autor)
+                            .addComponent(label_titulo)
+                            .addComponent(label_isbn13)
+                            .addComponent(label_lancamento)
+                            .addComponent(label_disponivel))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(text_isbn13)
+                                .addComponent(text_titulo)
+                                .addComponent(text_autor)
+                                .addComponent(text_editora, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(text_disponivel)
+                                .addComponent(text_lancamento, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addComponent(button_buscar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(button_adicionar)
+                        .addGap(18, 18, 18)
+                        .addComponent(button_editar)
+                        .addGap(18, 18, 18)
+                        .addComponent(button_excluir)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_isbn13)
+                    .addComponent(text_isbn13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_buscar))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_titulo)
+                    .addComponent(text_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_autor)
+                    .addComponent(text_autor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_editora)
+                    .addComponent(text_editora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_lancamento)
+                    .addComponent(text_lancamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_disponivel)
+                    .addComponent(text_disponivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_adicionar)
+                    .addComponent(button_editar)
+                    .addComponent(button_excluir))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -56,11 +171,43 @@ public class Livros_Acoes extends javax.swing.JInternalFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setBounds(800, 400, 406, 310);
+        setBounds(800, 400, 363, 285);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button_buscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_buscarMouseClicked
+        
+    }//GEN-LAST:event_button_buscarMouseClicked
+
+    private void button_adicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_adicionarMouseClicked
+        
+    }//GEN-LAST:event_button_adicionarMouseClicked
+
+    private void button_editarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_editarMouseClicked
+        
+    }//GEN-LAST:event_button_editarMouseClicked
+
+    private void button_excluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_excluirMouseClicked
+        
+    }//GEN-LAST:event_button_excluirMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton button_adicionar;
+    private javax.swing.JButton button_buscar;
+    private javax.swing.JButton button_editar;
+    private javax.swing.JButton button_excluir;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel label_autor;
+    private javax.swing.JLabel label_disponivel;
+    private javax.swing.JLabel label_editora;
+    private javax.swing.JLabel label_isbn13;
+    private javax.swing.JLabel label_lancamento;
+    private javax.swing.JLabel label_titulo;
+    private javax.swing.JTextField text_autor;
+    private javax.swing.JTextField text_disponivel;
+    private javax.swing.JTextField text_editora;
+    private javax.swing.JTextField text_isbn13;
+    private javax.swing.JTextField text_lancamento;
+    private javax.swing.JTextField text_titulo;
     // End of variables declaration//GEN-END:variables
 }

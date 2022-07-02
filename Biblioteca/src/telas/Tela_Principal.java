@@ -8,6 +8,7 @@ public class Tela_Principal extends javax.swing.JFrame {
     private static Livros_Acoes LA = new Livros_Acoes();
     private static Aluno_Acoes AA = new Aluno_Acoes();
     private static Menu_Ajuda MA = new Menu_Ajuda();
+    private static Ret_Dev RD = new Ret_Dev();
     
     public Tela_Principal() {
         initComponents();
@@ -16,6 +17,9 @@ public class Tela_Principal extends javax.swing.JFrame {
         
         button_alunos.setVerticalTextPosition(SwingConstants.BOTTOM);
         button_alunos.setHorizontalTextPosition(SwingConstants.CENTER);
+        
+        button_retdev.setVerticalTextPosition(SwingConstants.BOTTOM);
+        button_retdev.setHorizontalTextPosition(SwingConstants.CENTER);
     }
 
 
@@ -38,6 +42,7 @@ public class Tela_Principal extends javax.swing.JFrame {
         button_ajuda = new javax.swing.JButton();
         button_ajuda.setVerticalTextPosition(SwingConstants.BOTTOM);
         button_ajuda.setHorizontalTextPosition(SwingConstants.CENTER);
+        button_retdev = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Biblioteca");
@@ -79,9 +84,25 @@ public class Tela_Principal extends javax.swing.JFrame {
             }
         });
 
+        button_retdev.setBackground(new java.awt.Color(23, 71, 96));
+        button_retdev.setForeground(new java.awt.Color(255, 255, 255));
+        button_retdev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/book_retdev.png"))); // NOI18N
+        button_retdev.setText("Retirar/Devolver");
+        button_retdev.setToolTipText("Registrar retiradas e devoluções");
+        button_retdev.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button_retdev.setMaximumSize(new java.awt.Dimension(130, 54));
+        button_retdev.setMinimumSize(new java.awt.Dimension(113, 54));
+        button_retdev.setPreferredSize(new java.awt.Dimension(130, 54));
+        button_retdev.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_retdevMouseClicked(evt);
+            }
+        });
+
         desktop_principal.setLayer(button_livros, javax.swing.JLayeredPane.DEFAULT_LAYER);
         desktop_principal.setLayer(button_alunos, javax.swing.JLayeredPane.DEFAULT_LAYER);
         desktop_principal.setLayer(button_ajuda, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        desktop_principal.setLayer(button_retdev, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout desktop_principalLayout = new javax.swing.GroupLayout(desktop_principal);
         desktop_principal.setLayout(desktop_principalLayout);
@@ -92,8 +113,9 @@ public class Tela_Principal extends javax.swing.JFrame {
                 .addGroup(desktop_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(button_alunos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(button_livros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(button_ajuda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(275, Short.MAX_VALUE))
+                    .addComponent(button_ajuda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(button_retdev, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
         desktop_principalLayout.setVerticalGroup(
             desktop_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,8 +125,10 @@ public class Tela_Principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(button_alunos)
                 .addGap(18, 18, 18)
+                .addComponent(button_retdev, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(button_ajuda)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,6 +160,13 @@ public class Tela_Principal extends javax.swing.JFrame {
         AA.setVisible(true);
         }
     }//GEN-LAST:event_button_alunosMouseClicked
+
+    private void button_retdevMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_retdevMouseClicked
+        if(!RD.isVisible()){
+        desktop_principal.add(RD);
+        RD.setVisible(true);
+        }
+    }//GEN-LAST:event_button_retdevMouseClicked
 
     private void button_ajudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_ajudaMouseClicked
         if(!MA.isVisible()){
@@ -183,6 +214,7 @@ public class Tela_Principal extends javax.swing.JFrame {
     private javax.swing.JButton button_ajuda;
     private javax.swing.JButton button_alunos;
     private javax.swing.JButton button_livros;
+    private javax.swing.JButton button_retdev;
     private javax.swing.JDesktopPane desktop_principal;
     // End of variables declaration//GEN-END:variables
 }
