@@ -43,6 +43,8 @@ public class Ret_Dev extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Retirada ou Devolução");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/book_retdev1.png"))); // NOI18N
+        setMinimumSize(new java.awt.Dimension(310, 250));
+        setPreferredSize(new java.awt.Dimension(310, 250));
 
         jLabel1.setText("Dia da retirada:");
 
@@ -95,7 +97,7 @@ public class Ret_Dev extends javax.swing.JInternalFrame {
                                         .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,14 +128,14 @@ public class Ret_Dev extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)
-                        .addGap(40, 40, 40)))
+                        .addGap(42, 42, 42)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
                 .addContainerGap())
         );
 
-        setBounds(800, 400, 299, 250);
+        setBounds(800, 400, 310, 250);
     }// </editor-fold>//GEN-END:initComponents
 
 
